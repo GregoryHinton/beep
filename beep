@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# /usr/local/bin/beep
+#
+aplay -q /usr/local/share/sounds/beep.wav

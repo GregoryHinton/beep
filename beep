@@ -1,6 +1,8 @@
 #!/bin/sh
 #
 # beep - Make a beep sound.
-#        Assumes pulseaudio (libpulse) is installed.
+#        Try pulseaudio first (package 'libpulse'),
+#        use ALSA if that fails (package 'alsa-utils').
 #
-paplay /usr/local/share/sounds/beep.wav
+SOUND=/usr/local/share/sounds/beep.wav
+paplay $SOUND 2>/dev/null || aplay -q $SOUND
